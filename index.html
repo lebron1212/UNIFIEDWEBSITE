@@ -16,9 +16,13 @@
       <button class="cta-button">GET YOUR FIRST VIRAL HIT</button>
     </div>
     <div class="hero-animation">
-     <div class="hero-animation">
-  <svg id="waveSVG" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg">
-    <path id="wavePath" d="M0,100 C200,80 600,120 800,100" stroke="#FF2CB5" stroke-width="4" fill="none"/>
+  <svg id="waveSVG" viewBox="0 0 800 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+    <path id="wavePath" d="
+      M 0 100 
+      C 100 60, 200 140, 300 100
+      S 500 60, 600 100
+      S 700 140, 800 100
+    " stroke="#FF2CB5" stroke-width="4" fill="none" />
   </svg>
 </div>
     </div>
@@ -28,8 +32,8 @@
 <script>
   gsap.registerPlugin(ScrollTrigger);
 
-  const wave = "M0,100 C200,80 600,120 800,100";
-  const house = "M0,150 L400,50 L800,150 L800,200 L0,200 Z";
+ const wave = "M 0 100 C 100 60, 200 140, 300 100 S 500 60, 600 100 S 700 140, 800 100";
+const house = "M0,150 L400,50 L800,150 L800,200 L0,200 Z";
 
   gsap.to(\"#wavePath\", {
     scrollTrigger: {
