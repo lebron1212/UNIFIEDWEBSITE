@@ -1,221 +1,72 @@
-
-/* General Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* style.css */
 
 body {
-  font-family: 'Barlow Condensed', sans-serif;
-  background-color: #0e0e0e;
-  color: #ffffff;
-  line-height: 1.6;
-  padding-bottom: 100px;
+  margin: 0;
+  background-color: #0A0A0A;
+  color: #F4F1EE;
+  font-family: 'IBM Plex Mono', monospace;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
-}
-
-img {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Header */
-.header {
-  text-align: center;
-  padding: 2rem 1rem;
-}
-
-.logo {
-  font-size: 2rem;
-  font-weight: 700;
-  color: #AC7A2A;
-}
-
-.tagline {
-  margin-top: 0.5rem;
-  font-size: 1rem;
-  color: #ccc;
-}
-
-.engine-img {
-  filter: invert(1);
-}
-
-/* Hero */
 .hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 2rem;
   text-align: center;
-  padding: 2rem 1rem;
 }
 
-.hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 1rem;
+.hero-content {
+  z-index: 2;
+  max-width: 800px;
 }
 
-.hero-video {
-  margin: 1.5rem auto;
-  max-width: 500px;
+.main-headline {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-weight: 800;
+  font-size: 3rem;
+  text-transform: uppercase;
+  margin: 0 0 1rem 0;
 }
 
-.desc {
+.subheadline {
+  font-weight: 700;
   font-size: 1.2rem;
-  color: #ccc;
-  margin-bottom: 1rem;
+  letter-spacing: 0.05em;
+  margin: 0 0 1rem 0;
 }
 
-.cta-btn {
-  display: inline-block;
+.body-text {
+  font-size: 1rem;
+  margin-bottom: 2rem;
+}
+
+.cta-button {
+  background: none;
+  border: 2px solid #FF2CB5;
+  color: #FF2CB5;
   padding: 0.75rem 1.5rem;
-  background-color: #AC7A2A;
-  color: #000;
-  font-weight: bold;
-  border-radius: 5px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
-
-
-.cta-btn:hover {
-  background-color: #8a6421;
+.cta-button:hover {
+  background-color: #FF2CB5;
+  color: #0A0A0A;
 }
 
-/* Gallery */
-.gallery, .results, .how-it-works, .end-result, .for-you, .faq, .footer-cta {
-  padding: 2rem 1rem;
-  max-width: 1000px;
-  margin: auto;
-  text-align: center;
+.hero-animation {
+  margin-top: 2rem;
+  width: 100%;
+  max-width: 800px;
 }
 
-.video-grid, .testimonial-grid, .result-items {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 1rem;
-  margin-top: 1rem;
+svg {
+  width: 100%;
+  height: auto;
 }
 
-.video-box, .testimonial, .result-box {
-  width: 300px;
-  background-color: #1a1a1a;
-  padding: 1rem;
-  border-radius: 8px;
-}
-
-/* How it Works */
-.steps {
-  text-align: left;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.step {
-  border-left: 2px solid #AC7A2A;
-  padding-left: 1rem;
-  margin-bottom: 1.5rem;
-}
-
-/* For You */
-.for-you-checklist {
-  list-style: none;
-  text-align: left;
-  max-width: 600px;
-  margin: 2rem auto;
-}
-
-.for-you-checklist li::before {
-  content: "âœ” ";
-  color: #AC7A2A;
-  font-weight: bold;
-  margin-right: 0.5rem;
-}
-
-.engine-container {
-  position: relative;
-  display: inline-block;
-}
-
-.engine-img {
-  display: block;
-  max-width: 100%;
-}
-
-.highlight {
-  position: absolute;
-  transform: translate(-50%, -50%);
-  border: 2px dashed #AC7A2A;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: box-shadow 0.2s ease;
-}
-
-.highlight:hover {
-  box-shadow: 0 0 0 4px rgba(172, 122, 42, 0.2);
-}
-
-.highlight::after {
-  content: attr(data-tooltip);
-  position: absolute;
-  bottom: 100%;
-  left: 50%;
-  transform: translate(-50%, -8px);
-  background: #222;
-  color: #fff;
-  padding: 6px 10px;
-  font-size: 0.8rem;
-  white-space: nowrap;
-  border-radius: 5px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-}
-
-.highlight:hover::after {
-  opacity: 1;
-}
-
-/* FAQ */
-.faq-item {
-  margin-bottom: 1rem;
-  text-align: left;
-  cursor: pointer;
-}
-
-.faq-item h3 {
-  font-size: 1.2rem;
-  color: #AC7A2A;
-}
-
-.faq-item p {
-  display: none;
-  margin-top: 0.5rem;
-  padding-left: 1rem;
-  color: #ccc;
-}
-
-/* Footer */
-.footer-cta {
-  text-align: center;
-  margin-top: 4rem;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #222;
-}
-
-.footer-logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #AC7A2A;
-  margin-bottom: 0.5rem;
-}
