@@ -54,20 +54,25 @@ gsap.to(wave1, {
 });
 
   // Ambient motion
-  function drawWave(pathElement, offset = 0, amplitude = 20, freq = 0.02, speed = 0.03) {
-    let t = 0;
-    function update() {
-      t += speed;
-      let path = "M0,100 ";
-      for (let x = 0; x <= 800; x += 20) {
-        const y = 100 + amplitude * Math.sin(x * freq + t + offset);
-        path += `L${x},${y} `;
-      }
-      pathElement.setAttribute("d", path);
+ function drawWave(pathElement, offset = 0, amplitude = 20, freq = 0.02, speed = 0.03) {
+  let t = 0;
+  function update() {
+    t += speed;
+    if (pathElement.id === "wave1" && morphing) {
       requestAnimationFrame(update);
+      return;
     }
-    update();
+
+    let path = "M0,100 ";
+    for (let x = 0; x <= 800; x += 20) {
+      const y = 100 + amplitude * Math.sin(x * freq + t + offset);
+      path += `L${x},${y} `;
+    }
+    pathElement.setAttribute("d", path);
+    requestAnimationFrame(update);
   }
+  update();
+}
 
   drawWave(document.getElementById("wave1"), 0, 20, 0.02, 0.03);
   drawWave(document.getElementById("wave2"), 1.5, 15, 0.025, 0.02);
