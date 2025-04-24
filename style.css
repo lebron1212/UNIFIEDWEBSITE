@@ -75,6 +75,8 @@ img {
   transition: all 0.3s ease;
 }
 
+
+
 .cta-btn:hover {
   background-color: #8a6421;
 }
@@ -129,6 +131,54 @@ img {
   font-weight: bold;
   margin-right: 0.5rem;
 }
+
+.engine-callouts {
+  padding: 4rem 2rem;
+  background-color: #111;
+  text-align: center;
+  color: #fff;
+}
+
+.engine-container {
+  position: relative;
+  max-width: 500px;
+  margin: 2rem auto;
+}
+
+.engine-img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.hotspot {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #AC7A2A;
+  border-radius: 50%;
+  cursor: pointer;
+  transform: translate(-50%, -50%);
+}
+
+.hotspot:hover::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+  background: rgba(0, 0, 0, 0.85);
+  color: #fff;
+  padding: 6px 10px;
+  font-size: 0.85rem;
+  border-radius: 6px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
 
 /* FAQ */
 .faq-item {
