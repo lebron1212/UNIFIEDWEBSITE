@@ -35,16 +35,23 @@
   const wavePath = "M0,100 C100,50 200,150 300,100 C400,50 500,150 600,100 C700,50 800,150 900,100";
   const housePath = "M0,150 L400,50 L800,150 L800,200 L0,200 Z";
 
-  gsap.to("#wave1", {
-    scrollTrigger: {
-      trigger: ".hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: true
-    },
-    attr: { d: housePath },
-    ease: "power1.inOut"
-  });
+  let morphing = false;
+
+const wave1 = document.getElementById("wave1");
+
+gsap.to(wave1, {
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+    onUpdate: (self) => {
+      morphing = self.progress > 0;
+    }
+  },
+  attr: { d: housePath },
+  ease: "power1.inOut"
+});
 
   // Ambient motion
   function drawWave(pathElement, offset = 0, amplitude = 20, freq = 0.02, speed = 0.03) {
