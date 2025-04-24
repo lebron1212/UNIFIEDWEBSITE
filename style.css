@@ -43,6 +43,10 @@ img {
   color: #ccc;
 }
 
+.engine-img {
+  filter: invert(1);
+}
+
 /* Hero */
 .hero {
   text-align: center;
